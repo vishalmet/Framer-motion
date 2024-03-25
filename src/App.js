@@ -10,12 +10,14 @@ import Menus from './pages/Menus';
 function App() {
   return (
    <div>
-    <Framer1 />
-    <Solids />
+    {/* <Framer1 /> */}
+    {/* <Solids /> */}
 
     <Router>
+      <Menus />
       <Routes>
-        <Route></Route>
+        <Route path="/" Component={Framer1} />
+        <Route path="/solids" Component={Solids} />
       </Routes>
     </Router>
    </div>

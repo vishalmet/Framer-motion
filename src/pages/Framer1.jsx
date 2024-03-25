@@ -1,33 +1,50 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Menus from "./Menus";
+import Solids from "./Solids";
+import CursorFollow from "./CursorFollow";
 
 const Framer1 = () => {
   return (
-    <div className="">
+    <div className=" bg-red-400 h-screen font-serif">
+      <div id="text-animation-section" className="  overflow-hidden items-center">
+        <motion.div
+          className=" text-black text-2xl pt-32  font-bold h-auto"
+          // animate={{ x: 100 }}
+          initial={{ scale: 0 }}
+          animate={{ scale: 3 }}
+          transition={{ ease: "easeInOut", duration: 3 }}
+        >
+          <p className=" flex justify-center"> Text animation</p>
+        </motion.div>
+        <div className=" pt-44">
+          <motion.div
+            className=" text-black text-2xl font-medium"
+            animate={{rotate: 360}}
+            transition={{ ease: "easeOut", duration: 4 }}
+          >
+            <p className=" flex justify-center">Welcome!</p>
+          </motion.div>
+          <motion.div
+            className=" text-black text-5xl font-medium pt-16"
+            animate={{ x: -50 }}
+            transition={{ ease: "easeOut", duration: 2 }}
+          >
+            <p className=" flex justify-center pb-32">
+              This page is animated using Framer motion!
+            </p>
+          </motion.div>
+        </div>
+      </div>
+      <div id="hover-and-tap-section" className="">
+      <Solids />
+      </div>
+      <div id="menu-item-3-section" className="">
       <Menus />
-    <div className=" bg-red-400 h-full flex justify-center overflow-hidden pb-16">
-      <motion.div
-        className=" text-black text-5xl font-bold"
-        animate={{ x: 100 }}
-        transition={{ ease: "easeOut", duration: 2 }}
-      >
-        Welcome!
-      </motion.div>
-      <motion.div
-        className=" text-black text-5xl font-bold pt-44"
-        animate={{ x: -125 }}
-        transition={{ ease: "easeOut", duration: 2 }}
-      >
-        Welcome!
-      </motion.div>
-      <motion.div
-        className=" h-30 w-30 bg-blue-400"
-        initial={{ scale: 0 }}
-        animate={{ scale: 6, rotate: 360 }}
-        transition={{ duration: 4 }}
-      />
-    </div>
+      </div>
+      <div id="menu-item-3-section" className="">
+      <CursorFollow />  
+      </div>
     </div>
   );
 };
